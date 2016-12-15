@@ -1,9 +1,6 @@
-import math
-
 class directions:
 	num_dirs = 4
 	North, East, South, West = xrange(num_dirs)
-
 
 direction = directions.North
 x_dist = 0
