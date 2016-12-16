@@ -45,8 +45,11 @@ class grid:
         return sum
 
 if __name__=="__main__":
+	# Part 1
+	#grid_a = grid([3,3,3], "square", "*", "%", 1, 1)
+
+	# Part 2
     grid_a = grid([1,3,5,3,1], "cross", "*", "%", 0, 2)
-    #grid_a = grid([3,3,3], "square", "*", "%", 1, 1)
     with open("directions.txt") as actions:
         key_str = ""
         for line in actions:

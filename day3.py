@@ -40,8 +40,9 @@ def process_vertical(fp):
 			a_sides = b_sides = None
 	return valid_triangles
 
-
-with open("directions.txt") as actions:
-	print process_horizontal(actions)
-with open("directions.txt") as actions:
-	print process_vertical(actions)
+if __name__ == "__main__":
+	# Part 1
+	#with open("directions.txt") as actions:
+	#	print process_horizontal(actions)
+	with open("directions.txt") as actions:
+		print process_vertical(actions)
