@@ -36,9 +36,19 @@ def retrieve_top_n(letter_freq, n):
 
 if __name__ == "__main__":
 	# Part 1
+	# with open("directions.txt") as actions:
+	# 	valid_checksums_sum = 0
+	# 	for line in actions:
+	# 		(name, sector, checksum) = sanitize_input(line)
+	# 		valid_checksums_sum = valid_checksums_sum+int(sector) if retrieve_top_n(count_letter_freq(name), 5) == checksum else valid_checksums_sum
+	# 	print valid_checksums_sum
+
+	# Part 2
 	with open("directions.txt") as actions:
-		valid_checksums_sum = 0
 		for line in actions:
 			(name, sector, checksum) = sanitize_input(line)
-			valid_checksums_sum = valid_checksums_sum+int(sector) if retrieve_top_n(count_letter_freq(name), 5) == checksum else valid_checksums_sum
-		print valid_checksums_sum
+			if retrieve_top_n(count_letter_freq(name), 5) == checksum:
+				shift_amount = int(sector) % 26
+				decrypted_key = ''.join(map(lambda x: chr((((ord(x)-ord('a'))+shift_amount) % 26)+ord('a')), name))
+				if decrypted_key == "northpoleobjectstorage":
+					print sector
